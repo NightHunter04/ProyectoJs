@@ -71,6 +71,55 @@ class Comida{
 }
 
 
+let hamburguesaClasica = new Comida ("Clasica", "Pan, medallon de carne", "-", "Cheddar ");
+let hamburguesaCompleta = new Comida ("Completa", "Pan, medallon de carne", " lechuga, tomate", " Cheddar, bacon");
+let hamburguesaDali = new Comida ("Pan de queso", "Doble medallon de carne", "lechuga, tomate confitado, cebolla caramelizada " , "Cheddar, crunchy bacon ");
+let hamburguesaVeggie = new Comida ("Pan de centeno", "Medallon de Lentejas","rucula", "queso brie", )
+
+let comidas = [hamburguesaClasica, hamburguesaCompleta, hamburguesaDali, hamburguesaVeggie]
+
+let carta = [];
+
+const mostrarCarta = () => {
+  let mensaje =  "Carta de Hamburguesas:"
+  comidas.forEach(comidas =>{
+     mensaje += `
+    opcion ${comidas.id}: ${comidas.nombre} - ${comidas.ingredientes} - ${comidas.vegetales} - ${comidas.adicionales}`
+
+  })
+  let Carta = prompt(mensaje)
+return mensaje;
+}
+
+
+console.log (hamburguesaClasica ,hamburguesaCompleta , hamburguesaDali, hamburguesaVeggie)
+
+
+/*const mostrarDias = () => {
+let mensaje = "Elige dia y horario:"
+}
+let reservas= true;
+
+while (reservas){}
+const reserva =[];
+reserva.push (new dia("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado","Domingo"));
+reserva.push (new horario("20:00", "21:00","22:00"));
+reserva.push (new personas(40) );*/
+
+
+
+/*class Comida{
+  constructor (nombre, ingredientes, vegetales , adicionales) {
+      this.nombre = nombre;
+      this.ingredientes = ingredientes;
+      this.vegetales = vegetales;
+      this.adicionales = adicionales
+  }
+}
+
+
+const menuHamburguesa = [(hamburguesaClasica),(hamburguesaCompleta),(hamburguesaCompleta)];
+let hamburger = menuHamburguesa.find ()
 
 const carta =[];
 carta.push (new Comida ("Hamburguesa Clasica", "Pan, medallon de carne", "-", "Cheddar "));
