@@ -8,7 +8,7 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: url(./salvador-dali-wallpaper-preview.jpg);
+  background-image: url(./fotos/salvador-dali-wallpaper-preview.jpg);
   background-size: cover;
   opacity: 95%;
 }
@@ -38,3 +38,6 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+
