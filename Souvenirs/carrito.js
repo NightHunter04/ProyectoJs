@@ -23,7 +23,7 @@ class Souvenir {
     let mensaje = "Elija su producto:"
     souvenirs.forEach(souvenir => {
         mensaje += `
-            Opción ${souvenir.id}: ${souvenir.nombre} - Stock: ${souvenir.stock} - $${souvenir.precio}`
+             ${souvenir.id}: ${souvenir.nombre} - Stock: ${souvenir.stock} - $${souvenir.precio}`
     })
     mensaje += `
             Ingrese 0 para no comprar`
