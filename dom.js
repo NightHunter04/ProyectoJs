@@ -1,6 +1,9 @@
 
 let ingreseUsuario;
 
+let botonVerificar= document.getElementById ('ingresarBoton');
+botonVerificar= addEventListener('click', verificar);
+
 function verificar() 
 {
     ingreseUsuario = document.getElementById('ingreseNombre').value;
