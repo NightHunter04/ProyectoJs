@@ -2,7 +2,7 @@ function probarCodigo (){
 
 
 alert ("Bienvenidos a Dali-Bar");
-  let ingreseNombre = prompt ("Ingrese su Nombre");
+  /*let ingreseNombre = prompt ("Ingrese su Nombre");
   let ingreseApellido = prompt ("Ingrese su Apellido");
   let ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
 
@@ -164,4 +164,4 @@ console.log (hamburguesaCompleta.length);
 const hamburguesaDali =[ "Pan de Queso","Hamburguesa","Cheddar","Lechuga","Tomate Confitado","Cebolla Caramelizada ","Panceta Crocante"];
 console.log (hamburguesaDali.length);*/
 
-
+}
