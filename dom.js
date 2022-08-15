@@ -2,7 +2,7 @@
 let ingreseUsuario;
 
 let botonVerificar= document.getElementById ('ingresarBoton');
-botonVerificar= addEventListener('click', verificar);
+botonVerificar.addEventListener('click', verificar);
 
 function verificar() 
 {
