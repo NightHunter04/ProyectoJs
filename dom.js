@@ -1,4 +1,3 @@
-
 let ingreseUsuario;
 
 let botonVerificar= document.getElementById ('ingresarBoton');

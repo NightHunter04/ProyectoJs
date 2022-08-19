@@ -7,7 +7,10 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script defer src="carrito.js"></script>
+     <script src="https://kit.fontawesome.com/df59baf6b8.jscrossorigin=anonymous"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
+    
+     
   </head>
   <body class="background">
     
@@ -31,10 +34,14 @@
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Album</strong>
-      </a>
+     
+      <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Album</strong>--> 
+        <button type="button" class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <a   id="boton"
+          class="btn-floating halfway-fab waves-effect waves-light red"
+          ><i class="material-icons">add_shopping_cart</i>0</a>        </button>
+        
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,9 +49,9 @@
   </div>
 </header>
 
-<main>
+<main class="cuerpo">
 
-  <section class="py-5 text-center container">
+  <section id="contenedorProducto" class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Seccion de souvenirs</h1>
@@ -54,95 +61,40 @@
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-           <img class="fotos" src="../fotos/mug-dali.jpg" alt="">
-            <div class="card-body">
-              <p class="card-text">Taza de porcelana con un excelente sublimado.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                </div>
-                </div>
-            </div>
-          </div>
+  
           
-        </div>
-        <div class="col">
+        <!--<div class="col">
           <div class="card shadow-sm">
-            <img class="fotos" src="../fotos/poster.jpg" alt="">
-            <div class="card-body">
-              <p class="card-text">Distintos motivos de posters y vinilos para decorar ambientes.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                </div>
-               
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="fotos" src="../fotos/gorro.jpg" alt="">
-            <div class="card-body">
-              <p class="card-text">Gorros confeccionados con los mejores materiales, distintos motivos y colores.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-          <img class=" fotos" src="../fotos/remera.jpg" alt="">
-            <div class="card-body">
-              <p class="card-text">Remera de puro algodon.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="fotos" src="../fotos/llavero.jpg" alt="">
-            <div class="card-body">
-              <p class="card-text">Llaveros hechos con los mejores materiales, diseñados para durar.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-          <img class=" fotos" src="../fotos/reloj.jpg" alt="">            
+          <img class=" fotos" src="../fotos2/reloj 1.png" alt=""> 
+          <h4 id="nombre">Reloj</h4>  
+          <h5 id="precio"> $4000</h5>         
           <div class="card-body">
               <p class="card-text">Super relojes de pared para decorar tu casa.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                  <button id="btnComprar" type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
                 </div>
+              -->
+              <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="carrito-contenedor">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </main>
 
 <footer class="text-muted py-5">
@@ -160,4 +112,5 @@
       
   </body>
  
+ <script src="../funciones.js"> </script>
 </html>

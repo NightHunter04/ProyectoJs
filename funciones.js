@@ -1,167 +1,70 @@
-function probarCodigo (){
+let stockProductos = [
+  {id: 1, nombre: "Taza", tipo: "taza", cantidad :"10", precio:"900", img:"../fotos2/reloj 1.png"},
+  {id: 2, nombre: "Remera", tipo: "Remera", cantidad :"10", precio:"3500"},
+  {id: 3, nombre: "Poster", tipo: "Poster", cantidad :"10", precio:"2000"},
+  {id: 4, nombre: "Gorro", tipo: "Vicera", cantidad :"10", precio:"2200"},
+  {id: 5, nombre: "LLavero", tipo: "Llavero", cantidad :"10", precio:"1200"},
+  {id: 6, nombre: "Reloj", tipo: "Reloj", cantidad :"10", precio:"4000"},
+]
 
+let carritoDeCompras=[]
 
-alert ("Bienvenidos a Dali-Bar");
-  /*let ingreseNombre = prompt ("Ingrese su Nombre");
-  let ingreseApellido = prompt ("Ingrese su Apellido");
-  let ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar"));
+const contenedorProductos = document.getElementById('contenedorProducto')
 
+const contenedorCarrito = document.getElementById('carrito-contenedor')
 
-while(ingreseNombre == "" || ingreseApellido == ""){
-  alert("No ingreso alguno de los datos, por favor ingréselos!");
-  ingreseNombre = prompt ("Ingrese su Nombre");
-  ingreseApellido = prompt ("Ingrese su Apellido");
+mostrarProductos();
 
-}
-while( ingreseCodigo != "1234"){
-    alert ( "Código Incorrecto, vuelva a ingresar el código");
-    ingreseCodigo = parseInt(prompt("Ingrese 1234 para ingresar")); 
-  }
-  
-  if( ingreseCodigo==1234){
-   
-    alert ("Bienvenido:\n"+(ingreseNombre  )+ " " + (ingreseApellido));
-    let seleccion = prompt("Usted desea reservar para cena, cantobar o jam?");
-    let ingreseDia = prompt ("Ingrese dia de la reserva: \n Lunes, \n Martes, \n Miercoles, \n Jueves, \n Viernes, \n Sabado");
-    let ingreseHorario = parseInt(prompt("Ingrese su Horario \n 20 \n 21 \n 22 \n 23"));
-    // let hora = 20 
-
-function reservas(ingreseDia, ingreseHorario){
-  var resultado = ingreseDia + ingreseHorario;
-  alert ("Su dia de reserva es:  \n" + (ingreseDia) + " a las " + (ingreseHorario));
-  console.log(resultado);
-  return resultado;
-  
-}
-
-if(seleccion == "cena"){
-  let cena1 = prompt ("Desea resevar para cenar SI o NO?");
-  (cena1 == "si");
-  console.log (reservas(ingreseDia, ingreseHorario));
-}
-
-
-
-if(seleccion == "cantobar"){
-  let cantobar = prompt ("Desea resevar para cantobar SI o NO?");
-  (cantobar == "si");
-  console.log (reservas(ingreseDia, ingreseHorario));
-}
-
-
-if(seleccion == "jam"){
-  let jam = prompt ("Desea resevar para jam SI o NO?");
-  (jam == "si");
-  console.log (reservas(ingreseDia, ingreseHorario));
-}
-
-if(seleccion == "no"){
-  alert("GRACIAS POR VISITARNOS");
-}
-}
-}
-
-class Comida{
-  constructor (nombre, ingredientes, vegetales , adicionales) {
-      this.nombre = nombre;
-      this.ingredientes = ingredientes;
-      this.vegetales = vegetales;
-      this.adicionales = adicionales
-  }
-}
-
-
-let hamburguesaClasica = new Comida ("Clasica", "Pan, medallon de carne", "-", "Cheddar ");
-let hamburguesaCompleta = new Comida ("Completa", "Pan, medallon de carne", " lechuga, tomate", " Cheddar, bacon");
-let hamburguesaDali = new Comida ("Pan de queso", "Doble medallon de carne", "lechuga, tomate confitado, cebolla caramelizada " , "Cheddar, crunchy bacon ");
-let hamburguesaVeggie = new Comida ("Pan de centeno", "Medallon de Lentejas","rucula", "queso brie", )
-
-let comidas = [hamburguesaClasica, hamburguesaCompleta, hamburguesaDali, hamburguesaVeggie]
-
-let carta = [];
-
-const mostrarCarta = () => {
-  let mensaje =  "Carta de Hamburguesas:"
-  comidas.forEach(comidas =>{
-     mensaje += `
-    opcion ${comidas.id}: ${comidas.nombre} - ${comidas.ingredientes} - ${comidas.vegetales} - ${comidas.adicionales}`
-
+function mostrarProductos (){
+  contenedorProductos.innerHTML=''
+  stockProductos.forEach (item => { 
+    let div =document.createElement('div')
+    div.className = 'producto'
+    div.innerHTML = `<div class="card shadow-sm">
+    <img class=" fotos w-25" src=" ${item.img}" alt=""> 
+    <h4 id="nombre">${item.nombre}</h4>  
+    <h5 id="precio"> ${item.precio}</h5>         
+    <div class="card-body">
+        <p class="card-text">Super relojes de pared para decorar tu casa.</p>
+        <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+        <button id="btnComprar ${item.id}" type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+        </div>`
+        contenedorProductos.appendChild(div);
+        let agregarProducto = document.getElementById(`btnComprar ${item.id}`);
+        agregarProducto.addEventListener('click',()=> {
+        agregarCarrito(item.id)
+        console.log (agregarProducto);
   })
-  let Carta = prompt(mensaje)
-return mensaje;
+    
+})
 }
 
+function agregarCarrito (id){
+  let existencia = carritoDeCompras.find(produc => produc.id == id)
+    if (existencia){
+        existencia.cantidad = existencia.cantidad + 1;
+        document.getElementById(`cant${existencia.id}`).innerHTML = `<p id="cant${existencia.id}">cantidad: ${existencia.cantidad}</p>`
+        actualizarCarrito()
+    }else {
+        let agregarItem = stockProductos.find(items => items.id == id)
+        agregarItem.cantidad = 1
+        carritoDeCompras.push(agregarItem);
+        mostrarCarrito(agregarItem);
+        
 
-console.log (hamburguesaClasica ,hamburguesaCompleta , hamburguesaDali, hamburguesaVeggie)
-
-
-/*const mostrarDias = () => {
-let mensaje = "Elige dia y horario:"
-}
-let reservas= true;
-
-while (reservas){}
-const reserva =[];
-reserva.push (new dia("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado","Domingo"));
-reserva.push (new horario("20:00", "21:00","22:00"));
-reserva.push (new personas(40) );*/
-
-
-
-/*class Comida{
-  constructor (nombre, ingredientes, vegetales , adicionales) {
-      this.nombre = nombre;
-      this.ingredientes = ingredientes;
-      this.vegetales = vegetales;
-      this.adicionales = adicionales
-  }
-}
-
-
-const menuHamburguesa = [(hamburguesaClasica),(hamburguesaCompleta),(hamburguesaCompleta)];
-let hamburger = menuHamburguesa.find ()
-
-const carta =[];
-carta.push (new Comida ("Hamburguesa Clasica", "Pan, medallon de carne", "-", "Cheddar "));
-carta.push (new Comida ("Hamburguesa Completa", "Pan, medallon de carne", " lechuga, tomate", " Cheddar, bacon"));
-carta.push (new Comida ("Hamburguesa Dali", "Pan de queso", "Doble medallon de carne", "lechuga, tomate confitado, cebolla caramelizada " , "Cheddar, crunchy bacon "));
-
-
-/*alert ("Menu de Comidas");
-
-const picadas = (" \n Picada Clasica , \n Picada Completa, Picada Dali");
-
-const lomitos = ("\n Lomito Clasico, \n Lomito Completo, \n Lomito Dali,");
-
-const hamburguesas = ("\n Hamburguesa Clasica, \n Hamburguesa Completa, \n Hamburguesa Dali");
-
-let ingreseComida = prompt("Menu de Dali-Bar, ingrese su opcion:  \n Picadas,  \n Lomitos, \n Hamburguesas,  \n Rabas,  \n Papas ")*/
-
-
- 
+    }
  
 
-
-/*class Hamburguesa {
-  constructor (nombre, ingredientes, verduras , adicionales) {
-      this.nombre = nombre;
-      this.ingredientes = ingredientes;
-      this.verduras = verduras;
-      this.adicionales = adicionales
-  }
+function mostrarCarrito (agregarItem){
+  let div = document.createElement ('div')
+    div.className = 'productoCarrito'
+    div.innerHTML = `<p>${agregarItem.nombre}</p>
+                    <p>$${agregarItem.precio}</p>
+                    <p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>
+                    <button class="boton-eliminar" id="eliminar ${agregarItem.id}">
+                    <i class="fas fa-trash-alt"></i>
+                    </button>`
+                    contenedorCarrito.appendChild(div)
 }
-const hamburguesa1 = new hamburguesa1 ("Clasica", "Pan, Medallon de carne", "Cheddar,");
-const hamburguesa2 = new hamburguesa2 (" Completa", " Pan, Medallon de carne", "Lechuga y Tomate", " Cheddar, Jamon,");
-const hamburguesa3 = new hamburguesa3 ("Dali ", "Pan de Queso, 2 medallones de carne", "Lechuga, Tomate Confitado, Cebolla Caramelizada" , "Cheddar, Panceta Crocante");
- console.log (hamburguesa1 ,hamburguesa2 , hamburguesa3)
-
-const hamburguesaClasica = ["Pan","Hamburguesa","Cheddar" ]; 
-console.log (hamburguesaClasica.length);
-
-const hamburguesaCompleta = ["Pan","Hamburguesa","Cheddar","Lechuga","Tomate"," Jamon", "Huevo"];
-console.log (hamburguesaCompleta.length);
-
-const hamburguesaDali =[ "Pan de Queso","Hamburguesa","Cheddar","Lechuga","Tomate Confitado","Cebolla Caramelizada ","Panceta Crocante"];
-console.log (hamburguesaDali.length);*/
-
 }

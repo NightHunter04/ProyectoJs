@@ -1,4 +1,4 @@
-class Souvenir {
+/*lass Souvenir {
     constructor(id,nombre,stock,precio) {
         this.id = id;
         this.nombre= nombre;
@@ -79,4 +79,10 @@ class Souvenir {
     }
   }
   
-  mostrarTotalCarrito()
+  mostrarTotalCarrito()*/
+  
+
+ // const contenedorProductos = document.getElementById('cuerpo');
+
+
+  
