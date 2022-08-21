@@ -59,7 +59,7 @@ function agregarCarrito (id){
         
 
     }
- 
+  }
 
 function mostrarCarrito (agregarItem){
   let div = document.createElement ('div')
@@ -71,7 +71,7 @@ function mostrarCarrito (agregarItem){
                     <iconify-icon icon="bi:trash"></iconify-icon>
                     </button>`
                     contenedorCarrito.appendChild(div)
-                    function eliminar() {
+                    
                       let btnEliminar = document.getElementsByClassName('boton-eliminar')
                       for (const btn of btnEliminar) {
                           btn.addEventListener('click',(e)=>{
@@ -80,12 +80,25 @@ function mostrarCarrito (agregarItem){
                               actualizarCarrito()
                           })
                       }
-                  }
-       
+                  
+  }
+
+  function eliminar() {
+    let btnEliminar = document.getElementsByClassName('boton-eliminar')
+    for (const btn of btnEliminar) {
+        btn.addEventListener('click',(e)=>{
+            btn.parentElement.remove();
+            carritoDeCompras = carritoDeCompras.filter(item => item.id != e.target.parentElement.id)
+            actualizarCarrito()
+        })
+    }
+}
+
+
  function actualizarCarrito(){
-contadorCarrito.innerText= carritoDeCompras.length
-precioTotal.innerText = carritoDeCompras.reduce((acc, el)=> acc + el.precio,0)
+  contadorCarrito.innerText= carritoDeCompras.reduce((acc,el)=> acc + el.cantidad,0)
+  precioTotal.innerText = carritoDeCompras.reduce((acc, el)=> acc + (el.precio * el.cantidad),0)
  } 
 
-}
-}
+
+

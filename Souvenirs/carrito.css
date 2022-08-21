@@ -2,6 +2,9 @@
   background-image: url(../index/fotos/salvador-dali-wallpaper-preview.jpg);
 }
 
+
+
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -101,4 +104,14 @@
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+}
+
+#fotos w-25{
+margin-left: 35%;
+}
+
+
+.productoCarrito{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 }

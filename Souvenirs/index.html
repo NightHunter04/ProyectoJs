@@ -35,18 +35,17 @@
   </div>
   <div  class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container" >
-     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
         <strong>Album</strong>--> 
         <button   type="button"class="btn btn-menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <a  
           class= "btn-floating halfway-fab waves-effect waves-light red" 
           ><i  class="material-icons">add_shopping_cart</i><span id="contadorCarrito" >0 </span></a>        </button>
-        
-     
       </button>
+      </div>
     </div>
-  </div>
 </header>
 
 <main class="cuerpo">
@@ -86,11 +85,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="carrito-contenedor">
-        <p class="precioProducto">
-          Precio total :$<span id="precioTotal">0</span>
+       
       </div>  
       
       <div class="modal-footer">
+        <p class="precioProducto">
+          Precio total :$<span id="precioTotal">0</span>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary">Save changes</button>
         
