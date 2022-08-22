@@ -2,7 +2,9 @@
   background-image: url(../index/fotos/salvador-dali-wallpaper-preview.jpg);
 }
 
-
+.hamburguesa{
+  margin-left: 15rem;
+}
 
 
 .bd-placeholder-img {
@@ -106,9 +108,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-#fotos w-25{
-margin-left: 35%;
-}
 
 
 .productoCarrito{
