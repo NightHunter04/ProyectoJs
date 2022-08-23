@@ -5,9 +5,12 @@ let stockProductos = [
   { id: 4,nombre: "Gorro",tipo: "Vicera",cantidad: 10,precio: 2200,img: "../fotos2/gorro 1.png" },
   { id: 5,nombre: "LLavero",tipo: "Llavero",cantidad: 10,precio: 1200,img: "../fotos2/llavero 1.png" },
   { id: 6,nombre: "Reloj",tipo: "Reloj",cantidad: 10,precio: 4000,img: "../fotos2/reloj 1.png" },
+  { id: 7,nombre: "Gorro",tipo: "Vicera",cantidad: 10,precio: 2200,img: "../fotos2/gorro 1.png" },
+  { id: 8,nombre: "Remera",tipo: "Remera",cantidad: 10,precio: 3500,img: "../fotos2/remera 1.png"},
+ 
 ]
 
-function relogActualizable () {
+function relojActualizable () {
   const currentTime = () => {
       const idTime = document.querySelector (`#reloj`);
       const date = new Date ();
@@ -27,7 +30,7 @@ function relogActualizable () {
   setInterval(currentTime, 1000);
 };
 
-relogActualizable();
+relojActualizable();
 
 let carritoDeCompras = []
 
@@ -39,6 +42,8 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 const contadorCarrito = document.getElementById('contadorCarrito');
 
 const precioTotal = document.getElementById('precioTotal');
+
+const guardarDatos = (clave,valor) => localStorage.setItem(clave,valor)
 
 mostrarProductos();
 
@@ -52,7 +57,7 @@ function mostrarProductos() {
     <h4 id="nombre">${item.nombre}</h4>  
     <h5 id="precio">$${item.precio}</h5>         
     <div class="card-body">
-        <p class="card-text">Super relojes de pared para decorar tu casa.</p>
+        <p class="card-text">Productos de exposicion.</p>
         <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
         <button id="btnComprar ${item.id}" type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
@@ -78,15 +83,14 @@ function agregarCarrito(id) {
     carritoDeCompras.push(agregarItem);
     mostrarCarrito(agregarItem);
     actualizarCarrito()
-
-
+    
   }
+  guardarDatos("listadoDeProductos", JSON.stringify(carritoDeCompras))
 }
 
 function mostrarCarrito(agregarItem) {
   let div = document.createElement('div')
   div.className = 'productoCarrito'
-  //Acá le quité el segundo id que creaste y le puse data-id que es un atributo que nos sirve para agregar los datos que querramos
   div.innerHTML = `<p>${agregarItem.nombre}</p>
                     <p>$${agregarItem.precio}</p>
                     <p id="cant${agregarItem.id}">cantidad: ${agregarItem.cantidad}</p>
@@ -99,6 +103,7 @@ function mostrarCarrito(agregarItem) {
   for (const btn of btnEliminar) {
     btn.addEventListener('click',(e) => {
       btn.parentElement.remove();
+      guardarDatos("listadoDeProductos", JSON.stringify(carritoDeCompras))
 
      
       carritoDeCompras = carritoDeCompras.filter(item => item.id != e.target.parentElement.dataset.id)
@@ -116,18 +121,14 @@ function actualizarCarrito() {
   precioTotal.innerText = carritoDeCompras.reduce((acc,el) => acc + (el.precio * el.cantidad),0)
 }
 
-/*recuerden el codigo del carrito del after, lo desestructuran así
-array.forEach(item =>{
-    const {nombre,img,desc,talle,precio} = item 
-    let div = document.createElement('div')// <div 
-    div.className = 'producto'
-    div.innerHTML= `<div class="card">
-                        <div class="card-image">
-                        <img src="${img}" />
-                        <span class="card-title">${nombre}</span>
-                        <p>${desc}</p>
-                        <p>Talle: ${talle}</p>
-                        <p>$${precio}</p>
-                        </div>
-                </div>`
-    contenedorProductos.appendChild(div)*/
+function recuperarProductos(){
+  let productosRecuperados= JSON.parse(localStorage.getItem("listadoDeProductos"));
+  if(productosRecuperados){
+    productosRecuperados.forEach(produc =>{
+      mostrarCarrito(produc) 
+      carritoDeCompras.push(produc)
+      actualizarCarrito()
+    })
+  }
+}
+recuperarProductos();

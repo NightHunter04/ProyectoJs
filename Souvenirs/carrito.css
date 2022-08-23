@@ -1,9 +1,11 @@
-.background{
-  background-image: url(../index/fotos/salvador-dali-wallpaper-preview.jpg);
-}
-
-.hamburguesa{
-  margin-left: 15rem;
+#contenedorProducto{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-image: url(../fotos/salvador-dali-wallpaper-preview.jpg);
+ background-size: cover;
+ opacity: 800%;
+ border-radius: 10%;
 }
 
 
@@ -110,7 +112,3 @@
 
 
 
-.productoCarrito{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-}
