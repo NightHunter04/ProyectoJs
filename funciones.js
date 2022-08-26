@@ -48,6 +48,10 @@ const contadorCarrito = document.getElementById('contadorCarrito');
 
 const precioTotal = document.getElementById('precioTotal');
 
+const comprar =  document.getElementsByClassName(`btn btn-primary`);
+
+const cerrar = document.getElementsByClassName(`btn btn-secondary`);
+
 const guardarDatos = (clave,valor) => localStorage.setItem(clave,valor)
 
 mostrarProductos();
@@ -76,6 +80,15 @@ function mostrarProductos() {
     agregarProducto.addEventListener('click',() => {
       agregarCarrito(id)
       console.log(agregarProducto);
+
+      //Incorporacion de libreria Tostify
+      Toastify({
+        text: "Producto agregado al carrito",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
     })
   })
 }
@@ -92,6 +105,8 @@ function agregarCarrito(id) {
     carritoDeCompras.push(agregarItem);
     mostrarCarrito(agregarItem);
     actualizarCarrito()
+
+    
     
   }
   //Incorporacion de Json
@@ -113,6 +128,17 @@ function mostrarCarrito(agregarItem){
   for (const btn of btnEliminar) {
     btn.addEventListener('click',(e) => {
       btn.parentElement.remove();
+     //Incorporacion de libreria Tostify
+      Toastify({
+        text: "Producto eliminado",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+      }).showToast();
+
+      
+      
       
 
      
@@ -144,11 +170,3 @@ function recuperarProductos(){
 }
 recuperarProductos();
 
-/*wal.fire({
-  title: 'Sweet!',
-  text: 'Modal with a custom image.',
-  imageUrl: 'https://unsplash.it/400/200',
-  imageWidth: 400,
-  imageHeight: 200,
-  imageAlt: 'Custom image',
-})*/
