@@ -21,6 +21,7 @@ function verificar()
                
             }
             mensaje = `Bienvenido ${ingreseUsuario}`;
+            location.href="http://127.0.0.1:5501/Souvenirs/index.html"
         }
         else
         {
@@ -32,6 +33,7 @@ function verificar()
         mensaje= "Este usuario no existe"
     }
     document.getElementById('mensaje').innerText=mensaje;
+
 }
 
 function traerUsuariosDeLabase () {

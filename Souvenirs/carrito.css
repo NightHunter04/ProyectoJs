@@ -3,11 +3,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-image: url(../fotos/salvador-dali-wallpaper-preview.jpg);
- background-size: cover;
- opacity: 800%;
- border-radius: 10%;
+  background-size: cover;
+  opacity: 800%;
+  border-radius: 10%;
 }
 
+#muestras{
+ border-color: black;
+}
 
 .bd-placeholder-img {
   font-size: 1.125rem;
