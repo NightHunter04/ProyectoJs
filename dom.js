@@ -1,3 +1,7 @@
+
+let identificadorTiempoDeEspera;
+
+
 let ingreseUsuario;
 
 let botonVerificar= document.getElementById ('ingresarBoton');
@@ -22,6 +26,12 @@ function verificar()
             }
             mensaje = `Bienvenido ${ingreseUsuario}`;
             location.href="http://127.0.0.1:5501/Souvenirs/index.html"
+            function temporizadorDeRetraso() {
+                identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 3000);
+              }
+            
+           
+            
         }
            
         else
@@ -43,6 +53,9 @@ function traerUsuariosDeLabase () {
     usuarios.push (new Usuario("Cande","1111"));
     usuarios.push (new Usuario("Nico","6666"));
     usuarios.push (new Usuario("Mati","4444"));
+    usuarios.push (new Usuario("Octavio", "7777"));
+    usuarios.push(new Usuario ("Santi","2014"));
+    
     return usuarios;
 
 

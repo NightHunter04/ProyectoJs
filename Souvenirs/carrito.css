@@ -8,9 +8,10 @@
   border-radius: 10%;
 }
 
+
 #muestras{
- border-color: black;
-}
+ border-color: black; 
+ }
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -112,6 +113,5 @@
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
-
 
 

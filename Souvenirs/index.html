@@ -12,7 +12,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
       <link rel="stylesheet" href="./carrito.css">
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-      <link rel="stylesheet" href="sweetalert2.min.css">
+ 
     
      
   </head>
@@ -94,9 +94,10 @@
       <div class="modal-footer">
         <p class="precioProducto">
           Precio total :$<span id="precioTotal">0</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Comprar</button>
-        
+        <button type="button" id="BtnComprar"class="compra">Comprar</button>
+        <button type="button" id="BtnCancelar"class="Cancela">Cancelar</button>
+        <button type="button" id="BtnCerrar" class="cerrar" data-bs-dismiss="modal">Cerrar</button>
+
         </p> 
       </div>
     </div>
@@ -113,10 +114,12 @@
   </div>
 </footer>
 
-    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">  
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-      
+     <script src="../productos.json"></script> 
   </body>
  
  <script src="../funciones.js"> </script>

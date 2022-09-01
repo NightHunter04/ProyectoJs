@@ -1,5 +1,5 @@
 //Declaracion de productos
-let stockProductos = [
+/*let stockProductos = [
   { id: 1,nombre: "Funko",tipo: "Muñeco",cantidad: 10,precio: 3500,img: "../fotos3/funko.jpg" },
   { id: 2,nombre: "Reloj pulsera",tipo: "Reloj pulsera",cantidad: 10,precio: 3500,img:"../fotos3/reloj2.jpg"},
   { id: 3,nombre: "Taza",tipo: "taza",cantidad: 10,precio: 900,img: "../fotos3/mug-dali 1.png" },
@@ -9,9 +9,9 @@ let stockProductos = [
   { id: 7,nombre: "LLavero",tipo: "Llavero",cantidad: 10,precio: 1200,img: "../fotos3/llavero 1.png" },
   { id: 8,nombre: "Reloj",tipo: "Reloj",cantidad: 10,precio: 4000,img: "../fotos3/reloj 1.png" },
  
- ]
+ ]*/
 
-
+let stockProductos = []
  //Prueba de incorporar reloj al header
 function relojActualizable () {
   const currentTime = () => {
@@ -54,7 +54,7 @@ const cerrar = document.getElementsByClassName(`btn btn-secondary`);
 
 const guardarDatos = (clave,valor) => localStorage.setItem(clave,valor)
 
-mostrarProductos();
+//mostrarProductos();
 
 //Incorporar las cards al html con estilos de css propios de boostrap (faltan modificar algunos estilos para que sea mas presentable)//
 // Utilizacion de operadores avanzados en la desestructuracion de productos a partir solamente del nombre, precio, img y id//
@@ -92,6 +92,15 @@ function mostrarProductos() {
     })
   })
 }
+fetch('../productos json')
+
+.then(res => res.json)
+
+.then(data => {
+  stockProductos = [...data]
+  mostrarProductos() })
+
+ 
 //Funcion de carrito de compras
 function agregarCarrito(id) {
   let existencia = carritoDeCompras.find(produc => produc.id == id)
@@ -169,4 +178,20 @@ function recuperarProductos(){
   }
 }
 recuperarProductos();
+document.getElementById("BtnComprar").onclick = () =>{
+  Swal.fire(
+    'Excelente!',
+    'Procedemos con la compra!',
+    'success'
+  )
+}
+// Agregado de libreria Sweet Alert2 para el boton de cancelar compras!!
+document.getElementById("BtnCancelar").onclick = () =>{
+  Swal.fire({
+    icon: 'error',
+    title: 'Seguro?',
+    text: 'Procedemos a cancelar la compra',
+    
+  })}
 
+  

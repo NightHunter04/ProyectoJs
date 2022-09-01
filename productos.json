@@ -1,0 +1,76 @@
+
+[
+
+    { 
+        "id": 1,
+        "nombre": "Funko",
+        "tipo": "Muñeco",
+        "cantidad": 10,
+        "precio": 3500,
+        "img": "../fotos3/funko.jpg" 
+},
+
+{ 
+        "id": 2,
+        "nombre": "Reloj pulsera",
+        "tipo": "Reloj pulsera",
+        "cantidad": 10,
+        "precio": 3500,
+        "img":"../fotos3/reloj2.jpg"
+},
+    
+{       "id": 3,
+        "nombre": "Taza",
+        "tipo": "taza",
+        "cantidad": 10,
+        "precio": 900,
+        "img": "../fotos3/mug-dali 1.png" 
+},
+
+{ 
+        "id": 4,
+        "nombre": "Remera",
+        "tipo": "Remera",
+        "cantidad": 10,
+        "precio": 3500,
+        "img": "../fotos3/remera 1.png" 
+},
+
+{
+         "id": 5,
+         "nombre": "Poster",
+         "tipo": "Poster",
+         "cantidad": 10,
+         "precio": 2000,
+         "img": "../fotos3/poster 1.png" 
+},
+
+{       "id": 6,
+        "nombre": "Gorro",
+        "tipo": "Vicera",
+        "cantidad": 10,
+        "precio": 2200,
+        "img": "../fotos3/gorro 1.png" 
+
+},
+
+{ 
+        "id": 7,
+        "nombre": "LLavero",
+        "tipo": "Llavero",
+        "cantidad": 10,
+        "precio": 1200,
+        "img": "../fotos3/llavero 1.png" 
+},
+    
+{ 
+        "id": 8,
+        "nombre": "Reloj",
+        "tipo": "Reloj",
+        "cantidad": 10,
+        "precio": 4000,
+        "img": "../fotos3/reloj 1.png" 
+}
+   
+]
+  
