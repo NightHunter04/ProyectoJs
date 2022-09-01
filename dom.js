@@ -1,6 +1,4 @@
 
-let identificadorTiempoDeEspera;
-
 
 let ingreseUsuario;
 
@@ -26,9 +24,7 @@ function verificar()
             }
             mensaje = `Bienvenido ${ingreseUsuario}`;
             location.href="http://127.0.0.1:5501/Souvenirs/index.html"
-            function temporizadorDeRetraso() {
-                identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 3000);
-              }
+            
             
            
             
