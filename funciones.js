@@ -37,6 +37,7 @@
 relojActualizable();
 //Declaracion de arrays y funciones
 let carritoDeCompras = []
+
 let stockProductos = []
 
 
@@ -178,10 +179,14 @@ function recuperarProductos(){
 }
 recuperarProductos();
 document.getElementById("BtnComprar").onclick = () =>{
- Swal.fire(
+  Swal.fire(
    'Excelente!',
    'Procedemos con la compra!',
-   'success'
+   'success',
+   setTimeout (() =>{
+   location.href = "http://127.0.0.1:5502/formulario3/index.html "
+   }, 3000)
+  
  )
 }
 // Agregado de libreria Sweet Alert2 para el boton de cancelar compras!!
@@ -191,6 +196,11 @@ document.getElementById("BtnCancelar").onclick = () =>{
    title: 'Seguro?',
    text: 'Procedemos a cancelar la compra',
    
- })}
+   
+ })
+setTimeout(()=>{
+  location.href="http://127.0.0.1:5502/Souvenirs/index.html"
+ },3000);}
+ 
 
  

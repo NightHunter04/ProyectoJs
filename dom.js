@@ -23,8 +23,14 @@ function verificar()
                
             }
             mensaje = `Bienvenido ${ingreseUsuario}`;
-            location.href="http://127.0.0.1:5501/Souvenirs/index.html"
-            
+            let loading = document.querySelector('#loading');
+            loading.innerHTML = `<img width="250px" src="../fotos3/loading3.gif">`
+            setTimeout(()=>{
+                location.href="http://127.0.0.1:5502/Souvenirs/index.html"
+        },3000);
+        
+        
+        
             
            
             
