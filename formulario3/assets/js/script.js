@@ -8,7 +8,7 @@ $(function() {
     var confirmButton = $('#confirm-purchase');
     var visa = $("#visa");
     var amex = $("#amex");
-
+    let mensaje
 
     cardNumber.payform('formatCardNumber');
     CVV.payform('formatCardCVC');
@@ -47,11 +47,11 @@ $(function() {
         var isCvvValid = $.payform.validateCardCVC(CVV.val());
 
         if(owner.val().length < 5){
-            mensaje("Wrong owner name");
+            alert("Wrong owner name");
         } else if (!isCardValid) {
-            mensaje("Wrong card number");
+            alert("Wrong card number");
         } else if (!isCvvValid) {
-            mensaje("Wrong CVV");
+            alert("Wrong CVV");
         } else {
 
             Swal.fire(
