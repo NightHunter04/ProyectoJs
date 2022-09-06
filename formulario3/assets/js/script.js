@@ -59,6 +59,9 @@ $(function() {
                 'Lo esperamos para otra compra!',
                 'success'
               );
-        }
+        } setTimeout(()=>{
+            location.href="http://127.0.0.1:5502/Souvenirs/index.html"
+    },3000);
+    
     });
 });
