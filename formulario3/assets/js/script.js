@@ -47,6 +47,7 @@ $(function() {
         var isCvvValid = $.payform.validateCardCVC(CVV.val());
 
         if(owner.val().length < 5){
+            
            alert("Wrong owner name");
         } else if (!isCardValid) {
             alert("Wrong card number");
