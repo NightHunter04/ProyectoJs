@@ -47,7 +47,7 @@ $(function() {
         var isCvvValid = $.payform.validateCardCVC(CVV.val());
 
         if(owner.val().length < 5){
-            alert("Wrong owner name");
+           alert("Wrong owner name");
         } else if (!isCardValid) {
             alert("Wrong card number");
         } else if (!isCvvValid) {
@@ -60,8 +60,8 @@ $(function() {
                 'success'
               );
         } setTimeout(()=>{
-            location.href="http://127.0.0.1:5502/Souvenirs/index.html"
-    },3000);
+            location.href="https://www.google.com.ar/?gws_rd=ssl"
+    },2000);
     
     });
 });

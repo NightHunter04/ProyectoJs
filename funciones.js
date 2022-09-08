@@ -92,6 +92,7 @@ function mostrarProductos() {
      Toastify({
        text: "Producto agregado al carrito",
        className: "info",
+       position: "center",
        style: {
          background: "linear-gradient(to right, #00b09b, #96c93d)",
        }
@@ -141,6 +142,7 @@ function mostrarCarrito(agregarItem){
      Toastify({
        text: "Producto eliminado",
        className: "info",
+       position: "center",
        style: {
          background: "linear-gradient(to right, #00b09b, #96c93d)",
        }
@@ -184,7 +186,7 @@ document.getElementById("BtnComprar").onclick = () =>{
    'Procedemos con la compra!',
    'success',
    setTimeout (() =>{
-   location.href = "http://127.0.0.1:5502/formulario3/index.html "
+   location.href = "../formulario3 "
    }, 3000)
   
  )
@@ -198,9 +200,10 @@ document.getElementById("BtnCancelar").onclick = () =>{
    
    
  })
+ //Se incorpora SetTimeout!!//
 setTimeout(()=>{
-  location.href="http://127.0.0.1:5502/Souvenirs/index.html"
- },3000);}
+  location.href="../souvenirs"
+ },2000);}
  
 
  
